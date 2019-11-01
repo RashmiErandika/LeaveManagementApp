@@ -172,15 +172,16 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\Models\BaseModel.cs" />
+    <Compile Include="Core\Models\Employee.cs" />
     <Compile Include="Core\Models\EmployeeLeaveCount.cs" />
     <Compile Include="Core\RepositoryContracts\IRepository.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Core\Models\AccountViewModels.cs" />
+    <Compile Include="Core\ViewModels\AccountViewModels.cs" />
     <Compile Include="Persistence\ApplicationDbContext.cs" />
     <Compile Include="Core\Models\IdentityModels.cs" />
-    <Compile Include="Core\Models\ManageViewModels.cs" />
+    <Compile Include="Core\ViewModels\ManageViewModels.cs" />
     <Compile Include="Persistence\Repositories\AdminRepository.cs" />
     <Compile Include="Persistence\Repositories\BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -242,11 +243,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Admin\CreateUser.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Core\ViewModels\" />
-    <Folder Include="Views\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
