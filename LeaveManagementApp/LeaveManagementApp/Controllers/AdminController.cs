@@ -2,6 +2,7 @@
 using LeaveManagementApp.Persistence.Repositories;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace LeaveManagementApp.Controllers
@@ -36,22 +37,39 @@ namespace LeaveManagementApp.Controllers
         [HttpPost]
         public ActionResult CreateUser(FormCollection form)
         {
-            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(dbContext));
-            string UseName = form["email"];
-            string Email = form["email"];
-            string Password = form["password"];
+            var userStore = new UserStore<ApplicationUser>(dbContext);
+            var userManager = new UserManager<ApplicationUser>(userStore);
+
+            string useName = form["username"];
+            string email = form["email"];
+            string password = form["password"];
 
             var user = new ApplicationUser();
-            user.UserName = UseName;
-            user.Email = Email;
-            user.PasswordHash = Password;
-
-            var newuser = userManager.Create(user);
+            user.UserName = useName;
+            user.Email = email;
+            
+            var newuser = userManager.Create(user, password);
+            
             return View();
         }
+
         public ActionResult AssignRoles()
         {
+            ViewBag.Name = new SelectList(dbContext.Roles.ToList(), "Name", "Name");
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AssignRoles(FormCollection form)
+        {
+            string userName = form["username"];
+            string role = form["UserRole"];
+
+            ApplicationUser applicationUser = dbContext.Users.Where(u => u.UserName.Equals(userName, System.StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
+            var userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(dbContext));
+            userManager.AddToRoles(applicationUser.Id, role);
+            return View("Index");
+             
         }
     }
 }

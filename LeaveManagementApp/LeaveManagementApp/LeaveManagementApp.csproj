@@ -173,8 +173,8 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Core\Models\BaseModel.cs" />
     <Compile Include="Core\Models\Employee.cs" />
-    <Compile Include="Core\Models\EmployeeLeaveCount.cs" />
     <Compile Include="Core\RepositoryContracts\IRepository.cs" />
+    <Compile Include="Core\ViewModels\LeaveManagement.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -245,6 +245,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Admin\CreateUser.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\AssignRoles.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

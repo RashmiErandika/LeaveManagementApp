@@ -27,22 +27,22 @@ namespace LeaveManagementApp
                 var role = new IdentityRole("Admin");
                 roleManager.Create(role);
 
-                var user = new ApplicationUser
-                {
-                    UserName = "Priyanka",
-                    Email = "Priyanka@gmail.com"
-                };
+                //var user = new ApplicationUser
+                //{
+                //    UserName = "Priyanka",
+                //    Email = "Priyanka@gmail.com"
+                //};
 
-                string userPWD = "Priyanka@123";
+                //string userPWD = "Priyanka@123";
 
-                var newUser = userManager.Create(user, userPWD);
+                //var newUser = userManager.Create(user, userPWD);
 
-                //Add default User to Role Admin    
-                if (newUser.Succeeded)
-                {
-                    var result = userManager.AddToRole(user.Id, "Admin");
+                ////Add default User to Role Admin    
+                //if (newUser.Succeeded)
+                //{
+                //    var result = userManager.AddToRole(user.Id, "Admin");
 
-                }
+                //}
             }
 
             if (!roleManager.RoleExists("Employee"))
