@@ -1,0 +1,579 @@
+//input tip 
+.input-tip{
+    background-color:@tip-bgcolor;
+    color:@tip-fontcolor;
+    border:@tip-bordercolor;
+    border-left-width:1px;
+    border-right-width:1px;
+    border-bottom-width:1px;
+    border-left-style:solid;
+    border-right-style:solid;
+    border-bottom-style:solid;
+    font-size: @tip-fontsize;
+    padding: 8px;
+    text-align:left;
+}
+
+
+//---------------------------
+// bootstrap styles override
+//---------------------------
+
+// form control
+.form-control{
+    border-radius: @field-border-radius;
+    color: @field-text-color;
+    border-color: @field-border-color;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    .transition(border-color 300ms ease-in);
+    
+    &:focus, 
+    &:hover{
+        border-color:@field-border-focus-color;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+}
+.form-control[Equipment], .form-control[readonly], .form-control[disabled], fieldset[Equipment] .form-control{
+    background-color: @Equipment-input-bg;
+    border-color:@Equipment-input-border;
+}
+
+.input-group-addon{
+    padding: 8px 12px 6px;
+    border-radius:0;    
+}
+
+// custom disabled form field 
+.field-disabled{
+    background-color: @Equipment-input-bg;
+    border-color:@Equipment-input-border;
+    pointer-events:none;
+}
+// custom field error
+.field-error{
+    border-color: #EF4043!important;
+    background-color: rgba(255, 0, 0, 0.15)!important;
+
+}
+// label
+label{
+    font-weight:normal;
+    color:#777777;
+   // form label size is control through the h4 font style @h4-size
+}
+
+.form-horizontal .control-label{
+    text-align:left;
+    &.cl-text-right{
+        text-align:right;
+    }
+}
+
+// form group
+.form-group {
+    margin-bottom: 8px;
+}
+
+// radio button
+input[type="radio"], input[type="checkbox"]{
+     margin: 8px 0 10px 0;
+}
+input[type=submit],
+input[type=reset]{
+    .primary-font;
+}
+
+// alerts
+.alert{border-radius:0; color:#fff}
+.alert-success{background-color: #007E33;}
+.alert-info{background-color: #0099CC;}
+.alert-warning{background-color: #FF8800;}
+.alert-danger{background-color: #CC0000;}
+
+
+// validation messages
+//- error
+.has-error .help-block, .has-error .control-label, .has-error .radio, .has-error .checkbox, .has-error .radio-inline, .has-error .checkbox-inline{color: #EF4043;}
+.has-error .form-control{border-color: #EF4043; background-color: rgba(255,0,0,0.15);}
+//  - success
+.has-success .help-block, .has-success .control-label, .has-success .radio, .has-success .checkbox, .has-success .radio-inline, .has-success .checkbox-inline{color: #6EA038;}
+.has-success .form-control{border-color: #6EA038;}
+// - warning
+.has-warning .help-block, .has-warning .control-label, .has-warning .radio, .has-warning .checkbox, .has-warning .radio-inline, .has-warning .checkbox-inline{color: #F69F00;}
+.has-warning .form-control{border-color: #F69F00;}
+// - error messages
+.form-group .help-block{display:none;}
+.form-group.has-error .help-block{display:block;}
+.help-block{margin-top:0;margin-bottom: 0;}
+.form-group .error{color:#EF4043;}
+
+// btn
+.btn{
+   border-radius: @field-border-radius;
+   .transition(background-color 300ms ease-in);
+}
+.btn-fluid{
+    width:100%; 
+    height:34px;
+}
+.btn-primary{
+    color:@white;
+    background-color:@primary-color;
+    border-color:@primary-color;
+    //transition:all 300ms ease-in;
+
+   &:hover, &:focus, &:active{
+        color:@white;
+        background-color:darken(@primary-color,10%);
+        border-color:darken(@primary-color,10%);
+        outline:0;
+    }
+   &[disabled=disabled]{
+        text-indent: -9999px;
+        width: 60px;
+        background-image:url('../images/btn-loader-main.gif');
+        background-position:48% 48%;
+        background-repeat:no-repeat;
+        pointer-events:none;
+        //transition:all 300ms ease-in;
+   }
+}
+.btn-default{
+    color:@secondary-color;
+    background-color:lighten(@secondary-color,30%);
+    border-color:lighten(@secondary-color,30%);
+    
+    &:hover, &:focus, &:active{
+        color:@secondary-color;
+        background-color: lighten(@secondary-color,15%);
+        border-color:lighten(@secondary-color,15%);
+        outline:0;
+    }
+}
+
+
+
+.btn-success {
+  color: @white;
+  background-color: @success-color;
+  border-color: @success-color;
+}
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active,
+.btn-success.active,
+.open .dropdown-toggle.btn-success {
+  color: @white;
+  background-color: @success-color;
+ // lighten(@secondary-color,50%
+  border-color: @success-color;
+}
+
+.btn-warning {
+  color: @white;
+  background-color: @warning-color;
+  border-color: @warning-color;
+}
+.btn-warning:hover,
+.btn-warning:focus,
+.btn-warning:active,
+.btn-warning.active,
+.open .dropdown-toggle.btn-warning {
+  color: @white;
+  background-color: @warning-color;
+  border-color: @warning-color;
+}
+
+.btn-gray {
+  color: @gray-color;
+  background-color: @gray-color;
+  border-color: @gray-color;
+}
+.btn-gray:hover,
+.btn-gray:focus,
+.btn-gray:active,
+.btn-gray.active,
+.open .dropdown-toggle.btn-gray {
+  color: @gray-color;
+  background-color: @gray-color;
+  border-color: @gray-color;
+}
+
+.btn-blue {
+  color: @blue-color;
+  background-color: @blue-color;
+  border-color: @blue-color;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active,
+.open .dropdown-toggle.btn-blue {
+  color: @blue-color;
+  background-color: @blue-color;
+  border-color: @blue-color;
+}
+
+.btn-disable {
+  color: @gray-color;
+  background-color: @gray-color;
+  border-color: @gray-color;
+  pointer-events:none;
+  cursor:default;
+}
+.btn-disable:hover,
+.btn-disable:focus,
+.btn-disable:active,
+.btn-disable.active,
+.open .dropdown-toggle.btn-disable {
+  color: lighten(@gray-color,30%);
+  background-color: lighten(@gray-color,30%);
+  border-color: lighten(@gray-color,30%);
+}
+
+
+
+// buttons with borders only
+.borders-only{ 
+    font-weight:bolder;
+    border-width:2px;
+    padding: 5px 12px;
+
+    &.btn-default{
+        background-color:transparent;
+        color: @secondary-color;
+        border-color: @secondary-color;
+        border-style:solid;
+        cursor:pointer;
+
+        &:hover,
+        &:focus{
+            background-color:lighten(@secondary-color,50%);
+        }
+    }
+    &.btn-primary{
+        background-color:transparent;
+        color: @primary-color;
+        border-color: @primary-color;
+        border-style:solid;
+        cursor:pointer;
+
+        &:hover{
+            background-color:lighten(@primary-color,70%);
+        }
+        &[disabled=disabled]{
+            text-indent: -9999px;
+            width: 60px;
+            background-image:url('../images/btn-loader-sub.gif');
+            background-position:48% 48%;
+            background-repeat:no-repeat;
+            pointer-events:none;
+       }
+    }
+    &.btn-success{
+        background-color:transparent;
+        color: @success-color;
+        border-color: @success-color;
+        border-style:solid;
+        cursor:pointer;
+
+        &:hover{
+            background-color:lighten(@secondary-color,50%);
+        }
+    }
+    &.btn-warning{
+        background-color:transparent;
+        color: @warning-color;
+        border-color: @warning-color;
+        border-style:solid;
+        cursor:pointer;
+
+        &:hover{
+            background-color:lighten(@secondary-color,50%);
+        }
+    }
+    &.btn-gray{
+        background-color:transparent;
+        color: lighten(@gray-color,30%);
+        border-color: lighten(@gray-color,30%);
+        border-style:solid;
+        cursor:pointer;
+
+        &:hover{
+            background-color:lighten(@secondary-color,50%);
+        }
+    }
+    &.btn-blue{
+        background-color:transparent;
+        //color: lighten(@blue-color,30%);
+        color: @blue-color;
+        //border-color: lighten(@blue-color,30%);
+        border-color: @blue-color;
+        border-style:solid;
+        cursor:pointer;
+
+        &:hover{
+            background-color:lighten(@secondary-color,50%);
+        }
+    }
+    &.btn-disable{
+        background-color:transparent;
+        color: lighten(@gray-color,30%);
+        border-color: lighten(@gray-color,30%);;
+        border-style:solid;
+        &:hover{
+            background-color:lighten(@secondary-color,30%);
+        }
+    }
+}
+
+// optional field
+.optional-field{
+    &::after{
+        content:'optional';
+        font-size: 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        opacity: .5;
+        margin-top: 0;
+    }
+    input, textarea{
+        margin-top:-20px;
+    }
+}
+
+// image thumbnail
+.thumb-image {
+    float: left;
+    width: 100px;
+    position: relative;
+    padding: 5px;
+}
+
+// custom radio buttons and checkboxes
+.customcontrol {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  
+}
+.customcontrol input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control-indicator {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background:@white;
+  border:1px solid @field-border-color;
+  .transition()
+}
+.control-radio .control-indicator{
+  border-radius: 50%;
+}
+.customcontrol:hover input ~ .control-indicator/*,
+.customcontrol input:focus ~ .control-indicator*/ {
+  background:lighten(@field-border-color,15%);
+}
+.customcontrol input:checked ~ .control-indicator {
+  background:@primary-color;
+  border: 1px solid @primary-color;
+}
+.customcontrol:hover input:not([disabled]):checked ~ .control-indicator/*,
+.customcontrol input:checked:focus ~ .control-indicator*/ {
+  background: darken(@primary-color,5%); 
+}
+.customcontrol input:disabled ~ .control-indicator {
+  background: lighten(@secondary-color,50%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control-indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.customcontrol input:checked ~ .control-indicator:after {
+  display: block;
+}
+.control-checkbox .control-indicator:after {
+  left: 7px;
+  top: 4px;
+  width: 5px;
+  height: 8px;
+  border: solid @white;//#fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control-indicator:after {
+  border-color:darken(@secondary-color,15%);
+}
+.control-radio .control-indicator:after {
+  left: 7px;
+  top: 7px;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background: @white;//#fff;
+}
+.control-radio input:disabled ~ .control-indicator:after {
+  background: darken(@secondary-color,25%);
+}
+
+/*.select {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.select select {
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: 0;
+  border: 0;
+  border-radius: 0;
+  background: #e6e6e6;
+  color: #7b7b7b;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: #000;
+  background: #ccc;
+}
+.select select:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+.select__arrow {
+  position: absolute;
+  top: 16px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  border-style: solid;
+  border-width: 8px 5px 0 5px;
+  border-color: #7b7b7b transparent transparent transparent;
+}
+.select select:hover ~ .select__arrow,
+.select select:focus ~ .select__arrow {
+  border-top-color: #000;
+}
+.select select:disabled ~ .select__arrow {
+  border-top-color: #ccc;
+}*/
+
+
+.form-control[Equipment], .form-control[readonly], fieldset[Equipment] .form-control{
+   cursor: initial;
+}
+
+.easy-autocomplete-container{
+    .secondary-font;
+}
+.easy-autocomplete{
+    width:auto!important;
+}
+
+.ico-search{
+    &.fa-search{
+        position: absolute;
+        z-index: 999;
+        top: 10px;
+        left: 24px;
+        color: gray;
+    }
+    & + .easy-autocomplete > input, & + input{
+            padding-left: 28px;
+    }
+}
+.padding-left-0{
+    .ico-search{
+        &.fa-search{
+            left: 8px;
+        }
+        & + .easy-autocomplete > input, & + input{
+                padding-left: 28px;
+        }
+    }
+}
+.padding-left-8{
+    .ico-search{
+        &.fa-search{
+            left: 17px;
+        }
+        & + .easy-autocomplete > input, & + input{
+                padding-left: 28px;
+        }
+    }
+}
+
+
+//grid inside icon color
+.custom-icon{
+    .fa{
+        color: @gray-color;
+        cursor: pointer;
+        &:hover{
+            color: lighten(@gray-color,15%);
+        }
+    }
+}
+
+
+// dialog box styles
+.dialog-body{
+    padding: 14px 5px;
+}
+.dialog-footer{
+    padding: 0px 14px 10px 14px;
+}
+
+//custom labels design
+.label{
+    padding: 3px 6px;
+    &.label-default{
+        background-color: @gray-color;
+    }
+    &.label-success{
+        background-color: @success-color;
+    }
+    &.label-warning{
+        background-color: @warning-color;
+    }
+    &.label-danger{
+        background-color: @danger-color;
+    }
+    &.label-custom-one{
+        background-color: @blue-color;
+    }
+}
+
+// Buttons inside the grid
+.left-btn{
+    width:65px;
+    float:left;
+    margin-right: 5px;
+}
+.right-btn{
+    width:125px;
+    float:left;
+}
+
+
+// status messages shown in detail forms

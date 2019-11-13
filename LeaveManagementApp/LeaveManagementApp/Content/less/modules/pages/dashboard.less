@@ -1,0 +1,242 @@
+﻿.dashboard-wallpaper{
+    background-color: @dashboard-bgcolor;
+}
+.dashboard-page{
+    width:100%;
+    overflow-x:hidden;
+}
+.dashboard-menu{
+    display:none;
+    position:absolute;
+    top:50px;
+    left:0;
+    right:80px;
+    background-color: @dashboard-bgcolor;
+    padding-bottom: 25px;
+    -webkit-box-shadow: 3px 30px 73px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 3px 30px 73px -1px rgba(0, 0, 0, 0.75);
+    box-shadow: 3px 30px 73px -1px rgba(0, 0, 0, 0.75);
+    z-index:11000;
+    overflow-x:hidden;
+}
+.dashboard-menu-overlay{
+    display:none;
+    //background-color:rgba(40, 11, 38,0.3);
+    background-color: black;
+    opacity: 0.3;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:1;
+}
+
+.tile-group-heading{
+    font-weight:700;
+    color: @white;
+    text-transform:uppercase;
+    opacity:0.65;
+    padding-bottom:10px;
+}
+
+/*--------------------------------------------- tile colors --------------------------------------------*/
+.tile-green-1{background-color:@tile-green; border:@tile-border-thickness solid transparent;}
+.tile-green-2{background-color:darken(@tile-green, 2.5%); border:@tile-border-thickness solid transparent;}
+.tile-green-3{background-color:darken(@tile-green, 5%); border:@tile-border-thickness solid transparent;}
+.tile-green-4{background-color:darken(@tile-green, 7.5%); border:@tile-border-thickness solid transparent;}
+.tile-green-5{background-color:darken(@tile-green, 10%); border:@tile-border-thickness solid transparent;}
+.tile-green-6{background-color:darken(@tile-green, 12.5%); border:@tile-border-thickness solid transparent;}
+.tile-green-7{background-color:darken(@tile-green, 15%); border:@tile-border-thickness solid transparent;}
+
+.tile-greenyellow-1{background-color:@tile-greenyellow; border:@tile-border-thickness solid transparent;}
+.tile-greenyellow-2{background-color:darken(@tile-greenyellow, 2.5%); border:@tile-border-thickness solid transparent;}
+.tile-greenyellow-3{background-color:darken(@tile-greenyellow, 5%); border:@tile-border-thickness solid transparent;}
+.tile-greenyellow-4{background-color:darken(@tile-greenyellow, 7.5%); border:@tile-border-thickness solid transparent;}
+.tile-greenyellow-5{background-color:darken(@tile-greenyellow, 10%); border:@tile-border-thickness solid transparent;}
+.tile-greenyellow-6{background-color:darken(@tile-greenyellow, 12.5%); border:@tile-border-thickness solid transparent;}
+.tile-greenyellow-7{background-color:darken(@tile-greenyellow, 15%); border:@tile-border-thickness solid transparent;}
+
+
+.tile-blue-1{background-color:@tile-blue; border:@tile-border-thickness solid transparent;}
+.tile-blue-2{background-color:darken(@tile-blue, 2.5%); border:@tile-border-thickness solid transparent;}
+.tile-blue-3{background-color:darken(@tile-blue, 5%); border:@tile-border-thickness solid transparent;}
+.tile-blue-4{background-color:darken(@tile-blue, 7.5%); border:@tile-border-thickness solid transparent;}
+.tile-blue-5{background-color:darken(@tile-blue, 10%); border:@tile-border-thickness solid transparent;}
+.tile-blue-6{background-color:darken(@tile-blue, 12.5%); border:@tile-border-thickness solid transparent;}
+.tile-blue-7{background-color:darken(@tile-blue, 15%); border:@tile-border-thickness solid transparent;}
+
+
+.tile-seablue-1{background-color:@tile-seablue; border:@tile-border-thickness solid transparent;}
+.tile-seablue-2{background-color:darken(@tile-seablue, 2.5%); border:@tile-border-thickness solid transparent;}
+.tile-seablue-3{background-color:darken(@tile-seablue, 5%); border:@tile-border-thickness solid transparent;}
+.tile-seablue-4{background-color:darken(@tile-seablue, 7.5%); border:@tile-border-thickness solid transparent;}
+.tile-seablue-5{background-color:darken(@tile-seablue, 10%); border:@tile-border-thickness solid transparent;}
+.tile-seablue-6{background-color:darken(@tile-seablue, 12.5%); border:@tile-border-thickness solid transparent;}
+.tile-seablue-7{background-color:darken(@tile-seablue, 15%); border:@tile-border-thickness solid transparent;}
+
+.tile-red-1{background-color:@tile-red; border:@tile-border-thickness solid transparent;}
+.tile-red-2{background-color:darken(@tile-red, 2.5%); border:@tile-border-thickness solid transparent;}
+.tile-red-3{background-color:darken(@tile-red, 5%); border:@tile-border-thickness solid transparent;}
+.tile-red-4{background-color:darken(@tile-red, 7.5%); border:@tile-border-thickness solid transparent;}
+.tile-red-5{background-color:darken(@tile-red, 10%); border:@tile-border-thickness solid transparent;}
+
+
+
+
+
+.tile{
+    width: @tile-dimentions;
+    height: @tile-dimentions;
+    display:inline-block;
+    margin-right:8px;
+    margin-bottom:12px;
+    padding:12px;
+    .transition();
+
+    &:hover, &:focus, &:active{
+       text-decoration:none;
+       border:@tile-border-thickness solid @tile-border-color;
+
+       .icon{transform: translateX(7px);}
+       .caption{transform: translateX(3px);}
+    }
+    
+    .icon{
+        width: @tile-icon-dimentions;
+        height: @tile-icon-dimentions;
+        margin-top:11px;
+        .transition();
+    }
+
+    /* cash inventory icons */ 
+    .ico-cash-inv-inout{background-image:url('../images/icons/icoCashInvINOUT.png');}
+    .ico-cash-in-receiving{background-image:url('../images/icons/icoCashINCollections.png');}
+    .ico-cash-out-processing{background-image:url('../images/icons/icoCashOUTProcessing.png');}
+    .ico-cash-in-processing{background-image:url('../images/icons/icoCashInProcessing.png');}
+    .ico-cash-out-dispatch{background-image:url('../images/icons/icoCashOUTDispatch.png');}
+    .ico-customer-safe-bal-report{background-image:url('../images/icons/icoCashOUTDispatch.png');}
+    .ico-cashcentre-bal-report{background-image:url('../images/icons/icoCashOUTDispatch.png');}
+
+
+    /* receieving icons */
+    .ico-receive-collection{background-image:url('../images/icons/icoReceiveCollection.png');}
+    .ico-receive-route-items{background-image:url('../images/icons/icoReceiveRouteItems.png');}
+    .ico-cash-receipt-approval{background-image:url('../images/icons/icoCashReceiptApproval.png');}
+    .ico-send-to-vault{background-image:url('../images/icons/icoSendToVault.png');}
+
+    /* master data icons */
+    .ico-cashcentre{background-image:url('../images/icons/icoCashCentre.png');}
+    .ico-vault{background-image:url('../images/icons/icoVault.png');}
+    .ico-safe{background-image:url('../images/icons/icoSafe.png');}
+    .ico-seal{background-image:url('../images/icons/icoSeal.png');}
+    .ico-equipment{background-image:url('../images/icons/icoEquipment.png');}
+    .ico-cashbag{background-image:url('../images/icons/icoCashBag.png');}
+    .ico-bag{background-image:url('../images/icons/icoBag.png');}
+    .ico-customer{background-image:url('../images/icons/icoCustomer.png');}
+    .ico-customer-client{background-image:url('../images/icons/icoCustomerClient.png');}
+    .ico-link-customer-client{background-image:url('../images/icons/icoLinkCustomerClient.png');}
+    .ico-location{background-image:url('../images/icons/icoLocation.png');}
+    .ico-vehicle{background-image:url('../images/icons/icoVehicle.png');}
+    .ico-email-settings{background-image:url('../images/icons/icoEmailSettings.png');}
+
+    /* user data icons */
+    .ico-employee{background-image:url('../images/icons/icoEmployee.png');}
+    .ico-user{background-image:url('../images/icons/icoUser.png');}
+
+    .caption{
+        color:@tile-caption-font-color;
+        line-height: 100%;
+        padding-top: 10px;
+        font-size: @tile-caption-font-size;
+        display:inline-flex;
+        height:35px;
+        .transition();
+    }
+
+    &.inactive{ //inactive apps
+        pointer-events:none;
+        cursor:not-allowed;
+
+        .icon{
+            background-image:url('../images/icons/icoInactive.png');
+            background-repeat:no-repeat;
+            opacity:0.4;
+        }
+        
+        .caption{
+            opacity:0.4;
+        }
+    }
+}
+.profile-text{
+    color:@white;
+    text-align:right;
+    white-space:nowrap;
+    
+    &.username{
+        font-size:32px;
+        margin-bottom: 5px;
+        padding-right: 20px;
+    }
+    &.link a{
+        font-size:16px;
+        color:@white;
+        margin-bottom:5px;
+        text-decoration:none;
+        opacity:0.75;
+        display:block;
+        padding-right: 5px;
+        
+        .fa{
+            .transition();
+            opacity:0;
+            padding:0;
+        }
+       
+         &:hover{
+            opacity:1;
+
+            .fa{opacity:1}
+            .fa-unlock-alt{
+                color: #f9b050;
+                padding: 0 15px 0 4px;
+            }
+            .fa-power-off{
+                color: #f15748;
+                padding: 0 13px 0 4px;
+            }
+
+        }
+    }
+}
+
+/* animation */ 
+@-webkit-keyframes fadeInRight {
+     from {
+         opacity: 0;
+         -webkit-transform: translate3d(@tile-animation-distance, 0, 0);
+         transform: translate3d(@tile-animation-distance, 0, 0)
+     }
+     to {
+         opacity: 1;
+         -webkit-transform: none;
+         transform: none
+     }
+ }
+ @keyframes fadeInRight {
+     from {
+         opacity: 0;
+         -webkit-transform: translate3d(@tile-animation-distance, 0, 0);
+         transform: translate3d(@tile-animation-distance, 0, 0)
+     }
+     to {
+         opacity: 1;
+         -webkit-transform: none;
+         transform: none
+     }
+ }
+ .fadeInRight {
+     -webkit-animation-name: fadeInRight;
+     animation-name: fadeInRight
+ }

@@ -1,0 +1,88 @@
+﻿/*------------------------- Colored Fonts -------------------------------*/
+.font-success {
+  color: @success-color;
+}
+.font-success:hover,
+.font-success:focus,
+.font-success:active {
+  color: @success-color;
+}
+
+.font-warning {
+  color: @warning-color;
+}
+.font-warning:hover,
+.font-warning:focus,
+.font-warning:active {
+  color: @warning-color;
+}
+
+/*------------------------- Status bg colors -------------------------------*/
+.status{
+    color:white;
+    width:100%;
+    display:block;
+    vertical-align:middle;
+    font-weight:bold;
+    text-align:center;
+    padding: 7px;
+    text-transform:uppercase;
+    width:100%;
+
+    &.bg-success{background-color:@success-color;}
+    &.bg-warning{background-color:@warning-color;}
+    &.bg-danger{background-color:@danger-color;}
+}
+
+
+/*------------------------- Common -------------------------------*/
+.pagebreak-spacing{padding-top:@pagebreak-spacing;}
+
+.pagebreak-spacingx2{padding-top:@pagebreak-spacing*2;}
+
+.page-splitter{
+    margin: @pagebreak-spacing -14px;
+    border-bottom: 1px lighten(@secondary-color,40%) dotted;
+}
+// vertical page splitter
+// -- better when combined with col-right class in order to modify the margins and the paddings of the 
+// -- specific vertical column that's in use
+.page-splitter-v{
+    border-left: 1px lighten(@secondary-color,40%) dotted;
+    margin-top: -30px;
+    padding-top: 30px;
+    margin-bottom: -30px;
+    padding-bottom: 30px;
+    padding-left:30px;
+}
+.thick-underline{
+    border-bottom:@thick-underline-width solid lighten(@secondary-color,20%);
+    text-transform:uppercase;
+    font-weight:700;
+    display:inline-block;
+    color:lighten(@secondary-color,20%);
+}
+.notes,textarea{resize:none;}
+.lbl-notes{padding-left:40px;}
+.action-btn{margin:20px 0;}
+
+.comment-dialog .dialog-footer{padding: 0px 5px 10px 5px;} // FIX: padding specific to the comment dialogs
+.table-fluid{
+    width:100%;
+    
+    th,td{
+        padding:8px;
+    }
+    td{
+        font-family:@secondary-font!important;
+    }
+}
+
+
+
+
+
+
+
+
+

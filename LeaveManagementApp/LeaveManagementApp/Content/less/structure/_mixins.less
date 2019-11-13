@@ -1,0 +1,136 @@
+// --------------------- Variables --------------------- //
+//colors
+@body-color:#F6F8FA;
+@primary-color: #62005a;   
+//@primary-color: #7f8c8d;
+//@primary-color: #2980b9;
+//@primary-color: #1abc9c;
+//@primary-color: #009432;
+
+@secondary-color:#666666;
+@tertiary-color:white;
+@white:white;
+
+@tip-bgcolor:lightyellow;
+@tip-fontcolor:gray;
+@tip-bordercolor:@field-border-color;
+@tip-fontsize: 11px;
+
+@grid-btn-color: #282827;
+@grid-btn-color-hover:#282827;
+@grid-btn-bgcolor-hover:#b5a9b3;
+
+@hr-color:#cccccc;
+
+@white-page-border:#eaeaea;
+@white-page-bg:white;
+
+@success-color:#73b337;
+@warning-color:#f39c12;
+@danger-color:#cc1421;
+
+@gray-color: #6f6f6f;
+@blue-color: #3366ff;
+
+//font 
+@h1-size:28px;
+@h2-size:21px;
+@h3-size:17px;
+@h4-size:14px; // form label size
+@label-size: @h4-size;
+@para-text-size: @h4-size;
+@thick-underline-width:5px;
+
+//form prarams
+@field-border-radius: 0;
+@field-border-color: #cccccc;
+@field-border-hover-color:@primary-color;
+@field-border-focus-color:@primary-color;
+@field-bg-color: @white;
+@field-text-color: @secondary-color;
+@Equipment-input-bg:#f2f2f2;
+@Equipment-input-border:#cccccc;
+@Equipment-input-placeholder:#bbbaba;
+
+//page styles
+@pagebreak-spacing:30px;
+
+//------dashboard and metro menu-------//
+//tile
+@tile-dimentions: 128px;
+@tile-group-heading-color: @white;
+@tile-border-thickness: 4px;
+@tile-border-color: @white;
+@tile-icon-dimentions: 48px;
+@tile-caption-font-color: @white;
+@tile-caption-font-size: 12px;
+
+//colors
+@dashboard-bgcolor:darken(@primary-color,15%); //#280b26;
+@tile-green: #1fa13a;
+@tile-blue: #0076a3;
+@tile-seablue: #0092a3;
+@tile-red: #de4030;
+@tile-greenyellow:#92a01f;
+@tile-animation-distance:40%;
+
+// --------------------- Mixins --------------------- //
+//transition
+.transition (@trans: all 0.3s linear) {
+    -webkit-transition: @trans;
+    -moz-transition: @trans;
+    -o-transition: @trans;
+    transition: @trans;
+}
+
+//rounded corners
+.rounded-corners (@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    -ms-border-radius: @radius;
+    -o-border-radius: @radius;
+    border-radius: @radius;
+}
+
+//font
+.primary-font{
+    font-family: @primary-font, sans-serif;
+}
+.secondary-font{
+    font-family: @secondary-font, sans-serif;
+} 
+
+//font weight
+.bold-300{font-weight: 300}
+.bold-400{font-weight: 400}
+.bold-700{font-weight: 700}
+
+//font styles
+h1, .h1style{
+    font-size: @h1-size;
+    .bold-300;
+    .primary-font;
+}
+
+h2, .h2style{
+    font-size: @h2-size;
+    .bold-300;
+    .primary-font;
+}
+
+h3, .h3style{
+    font-size: @h3-size;
+    .bold-400;
+    .primary-font;
+}
+
+h4, .h4style{
+    font-size: @h4-size;
+    .bold-700;
+    .primary-font;
+}
+
+label, .label{
+    font-size: @para-text-size;
+}
+

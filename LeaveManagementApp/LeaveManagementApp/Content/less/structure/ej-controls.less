@@ -1,0 +1,180 @@
+﻿//---------------------------
+// toastr msg style override
+//---------------------------
+#toast-container>div{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity:0.9;
+    border-radius: 0;
+    top: 56px;
+}
+#toast-container>:hover{
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+//---------------------------
+// synfusion styles override
+//---------------------------
+
+// nullfying the border radius on autofill fields
+.e-atc-popup, .e-atc .e-in-wrap, .e-atc .e-in-wrap .e-input, 
+.e-acrdn-scroller, .e-acrdn .e-select, .e-chkbox-wrap div>span, 
+.e-datepicker.e-popup, .e-datewidget .e-in-wrap, .e-datewidget .e-in-wrap .e-input, 
+.e-datetime-popup.e-popup, .e-datetime-popup .e-dt-button, .e-datetime-wrap .e-in-wrap, 
+.e-datetime-wrap .e-in-wrap .e-input, .e-dialog-wrap, .e-dialog-wrap>.e-header .e-dialog-icon, 
+.e-ddl-popup.e-popup, .e-ddl .e-in-wrap, .e-ddl .e-in-wrap .e-input, .e-numeric .e-in-wrap, 
+.e-numeric .e-in-wrap .e-input, .e-percent .e-in-wrap, .e-percent .e-in-wrap .e-input, 
+.e-currency .e-in-wrap, .e-currency .e-in-wrap .e-input, .e-mask .e-in-wrap, 
+.e-mask .e-in-wrap .e-input, .e-textbox, .e-menu, .e-tab, .e-time-popup.e-popup, 
+.e-timewidget .e-in-wrap, .e-timewidget .e-in-wrap .e-input, .e-toolbar, .e-toolbar .e-tooltxt, 
+.e-upload-box .e-selectpart, .e-upload-box .e-btn, .e-treeview .e-text, .e-splitbutton, 
+.e-fileexplorer .e-tilenode, .e-rte, .e-rte.e-dialog .e-inputtext, .e-btn.e-select, .e-progressbar, 
+.e-check-wrap .e-chk-inact, .e-check-wrap .e-chk-act, .e-check-wrap .e-chk-indeter,
+.e-atc.e-rtl .e-in-wrap.e-padding .e-input, .e-atc .e-in-wrap.e-padding .e-select, 
+.e-datewidget.e-rtl .e-in-wrap.e-padding .e-input, .e-datewidget .e-in-wrap.e-padding .e-select, 
+.e-datetime-wrap.e-rtl .e-in-wrap.e-padding .e-input, .e-datetime-wrap .e-in-wrap.e-padding .e-select, 
+.e-ddl.e-rtl .e-in-wrap .e-input, .e-ddl .e-in-wrap .e-select, .e-numeric.e-rtl .e-in-wrap.e-padding .e-input, 
+.e-numeric .e-in-wrap.e-padding .e-select, .e-percent.e-rtl .e-in-wrap.e-padding .e-input, .e-percent .e-in-wrap.e-padding .e-select, 
+.e-currency.e-rtl .e-in-wrap.e-padding .e-input, .e-currency .e-in-wrap.e-padding .e-select, .e-timewidget.e-rtl .e-in-wrap.e-padding .e-input, 
+.e-timewidget .e-in-wrap.e-padding .e-select,
+.e-tab.e-js>.e-header,
+.e-acrdn .e-select.e-active, .e-datepicker.e-popup .e-header, .e-tab>ul.e-addborderbottom .e-item, .e-tab .e-addbordertop.e-content-item, .e-split .e-splitarrowtop .e-drp-btn, .e-split .e-splitarrowbottom .e-splitbutton, .e-rte .e-toolbar, .e-datetime-popup .e-header, .e-fileexplorer .e-toolbar,
+.e-acrdn-content-active, .e-dialog-wrap .e-widget-content, .e-tab>ul.e-addbordertop .e-item, .e-tab .e-addborderbottom.e-content-item, .e-split .e-splitarrowbottom .e-drp-btn, .e-split .e-splitarrowtop .e-splitbutton, .e-rte .e-rte-footer, .e-datetime-popup .e-time-popup{
+       border-radius: 0; 
+}
+
+// add button on grid
+.add-item{
+    background-color: #ececec;
+    border-width: 1px 1px 0 1px;
+    border-style: solid;
+    border-color: #c8c8c8;
+    padding: 5px 0;
+
+    button{
+        margin-left:5px;
+        background-color:transparent;
+        color: @grid-btn-color;
+        border:0;
+
+        &:hover{
+            color:@grid-btn-color-hover;
+            background-color: @grid-btn-bgcolor-hover;
+        }
+    }
+}
+// edit button on grid
+.btn-grid{
+    outline:0;
+    border:0;
+    background-color:transparent;
+}
+.btn-grid-row-action{
+    //white-space:nowrap;
+}
+.e-pagermsg{
+    font-size: 12px;
+    opacity: .75;
+    margin-right: 10px;
+    .primary-font;
+}
+
+// no record msg padding
+.e-grid .emptyrecord{
+    padding:8px;
+}
+
+// grid footer
+.e-pager, .e-grid .e-pagerstatusbar{
+    padding-bottom: 1px;
+    padding-top: 5px;
+}
+
+//fix for setting the bool cell's left padding
+.e-grid .e-boolrowcell{
+    padding-left: .7em;
+}
+
+// ----------------------------- tab styles -------------------------------------------------
+// page splitter inside a tab
+.e-tab .page-splitter{margin: 30px -4px;}
+.e-tab .e-header.e-addborderbottom .e-active{border-top-color:@primary-color;}
+.e-tab .e-header>.e-active a, .e-tab .e-left>.e-active a, .e-tab .e-right>.e-active a{color: @secondary-color;}
+.e-tab .e-header>.e-select a, .e-tab .e-left>.e-select a, .e-tab .e-right>.e-select a{color: lighten(@secondary-color,30%);}
+.e-tab .e-header > .e-select a, .e-tab .e-left > .e-select a, .e-tab .e-right > .e-select a{color: lighten(@secondary-color,20%);}
+.e-tab .e-active-content{padding: 2.5em 1.4em; padding-bottom:20px;}
+.e-tab.e-js.e-widget{font-family:@primary-font}
+
+// setting the secondary font for numeric text readability
+.e-rowcell,
+input, 
+select,
+.e-pagermsg,
+textarea,
+.e-pager{.secondary-font;}
+
+input[type=button],
+input[type=submit]{.primary-font;}
+
+
+.e-pager div.e-parentmsgbar{
+    padding-top: 2px;
+}
+
+// fonts inside teh filter list
+.e-searchcontainer{.secondary-font;}
+
+// set sf dropdown font
+.e-datewidget {
+    .e-input {
+    color: #555555;
+    }
+}
+
+.e-ddl .e-input, .e-ddl .e-input[readonly], .e-ddl-popup, .e-ddl .e-options, 
+.e-input::placeholder{
+    font-family: @secondary-font;  
+    font-style:normal;
+}
+
+// set datetime picker background color
+.form-control[Equipment], 
+.form-control[readonly], 
+.form-control[disabled], 
+fieldset[Equipment] 
+.form-control {
+    &.e-datepicker{
+        background-color:@white;
+        font-family: @secondary-font;
+        color:#555;
+    }
+}
+
+// removing the unwanted margin on checkboxes
+.e-checkcelldiv{
+    padding:0;
+    margin: -10px;
+}
+
+// fix: height issue in the grid pager
+.e-pager .e-pagercontainer{
+    height: 27px;
+}
+
+// grid total field font styles
+.e-gridSummaryRows{
+     font-family: @secondary-font;
+
+     td:first-child{
+         font-family: @primary-font;
+     }
+}
+
+//.e-datetime-wrap width setup
+//.e-datetime-wrap{
+ //   width:100%;
+//}
