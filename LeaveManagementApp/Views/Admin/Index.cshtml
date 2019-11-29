@@ -1,0 +1,87 @@
+﻿@model IEnumerable<LeaveManagementApp.Core.Models.Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@Html.ActionLink("Create New User","CreateUser","Admin") |
+
+<a href="@Url.Action("Index","EmployeeLeaveCounts")">View Leave Count History</a>
+
+
+<p>
+    @using (Html.BeginForm("Index","Admin", FormMethod.Get)) 
+    {
+        @Html.TextBox("search") <input type="submit" value="Search" />
+    }
+
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.Designation)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.ContactNo)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.JoinDate)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+
+        <th>
+            @Html.DisplayNameFor(model => model.IsConfirmed)
+        </th>
+
+    </tr>
+
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ContactNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JoinDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsConfirmed)
+            </td>
+        </tr>
+    }
+</table>
+
